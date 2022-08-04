@@ -1,0 +1,20 @@
+{{#each this}}
+  <div class='wrapper'>
+    <img src='{{flags.svg}}' width='80' alt='{{name}} flag' />
+    <p class='title'>{{name}}</p>
+  </div>
+
+  <p class='description'><span
+      class='parameters-name'
+    >Capital:</span>{{capital}}.</p>
+  <p class='description'><span
+      class='parameters-name'
+    >Population:</span>{{population}}.</p>
+  <p class='description'>
+    <span class='parameters-name'>Languages:</span>{{#each languages}}
+      {{#unless @last}}{{this.name}},{{/unless}}
+      {{#if @last}} {{this.name}} {{/if}}
+    {{/each}}
+  </p>
+
+{{/each}}
